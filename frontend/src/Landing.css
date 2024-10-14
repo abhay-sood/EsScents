@@ -1,0 +1,17 @@
+/* Landing.css */
+
+.landing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black; /* Black background */
+}
+
+.landing-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 5rem; /* Adjust the size as needed */
+  color: white;    /* White text color */
+  text-align: center;
+  font-weight: 700;
+}
