@@ -6,8 +6,14 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: black; /* Ensures the background is black globally */
-  overflow-x: hidden; 
+  background: radial-gradient(circle at top, #262626, #000000);
+  overflow-x: hidden;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 * {
@@ -27,4 +33,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
