@@ -14,8 +14,8 @@ const HamburgerMenu = () => {
     // Make the sheet and blur overlay visible
     gsap.set([sheetRef.current, blurOverlayRef.current], { visibility: 'visible' });
 
-    // Hide the menu items initially
-    gsap.set(menuItemsRef.current, { opacity: 0, visibility: 'visible' });
+    // Hide the menu items initially with an offset for the slide-down effect
+    gsap.set(menuItemsRef.current, { opacity: 0, visibility: 'visible', y: -20 });
 
     // Animate the blur overlay to fade in
     gsap.to(blurOverlayRef.current, {
@@ -31,11 +31,12 @@ const HamburgerMenu = () => {
       ease: 'power2.inOut',
       onStart: () => setIsMenuOpen(true),
       onComplete: () => {
-        // Animate menu items to fade in
+        // Animate menu items to fade in and slide down
         gsap.to(menuItemsRef.current, {
           opacity: 1,
+          y: 0, // Slide back to the original position
           duration: 0.5,
-          ease: 'power2.inOut',
+          ease: 'power2.out',
         });
       },
     });
@@ -52,9 +53,10 @@ const HamburgerMenu = () => {
       ease: 'power2.inOut',
     });
 
-    // Animate the menu items to fade out
+    // Animate the menu items to fade out and slide up
     gsap.to(menuItemsRef.current, {
       opacity: 0,
+      y: -20, // Slide up slightly
       duration: 0.5,
       ease: 'power2.inOut',
       onComplete: () => {
@@ -122,16 +124,16 @@ const HamburgerMenu = () => {
           className="pt-16 flex flex-col items-start space-y-6 pl-8"
           style={{ opacity: 0, visibility: 'hidden' }}
         >
-          <a href="#home" className="text-white text-4xl hover:text-gray-300">
+          <a href="#home" className="font-elegant text-white text-4xl hover:text-gray-300">
             Home
           </a>
-          <a href="#products" className="text-white text-4xl hover:text-gray-300">
+          <a href="#products" className="font-elegant text-white text-4xl hover:text-gray-300">
             Products
           </a>
-          <a href="#about" className="text-white text-4xl hover:text-gray-300">
+          <a href="#about" className="font-elegant text-white text-4xl hover:text-gray-300">
             About
           </a>
-          <a href="#contact" className="text-white text-4xl hover:text-gray-300">
+          <a href="#contact" className="font-elegant text-white text-4xl hover:text-gray-300">
             Contact
           </a>
         </div>

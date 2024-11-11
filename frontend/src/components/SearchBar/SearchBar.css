@@ -1,41 +1,49 @@
-/* search.css */
+/* Outer wrapper for semi-transparent background */
+.search-bar-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent light background */
+    border-radius: 12px; /* Larger border-radius for the wrapper */
+    padding: 8px; /* Padding for spacing */
+    max-width: 640px;
+}
 
-.header-outline {
+/* Search bar container */
+.search-bar-container {
     position: relative;
-    background-clip: padding-box;
-    border-radius: 30px;
-    overflow: hidden;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Dark semi-transparent background */
+    backdrop-filter: blur(20px); /* Apply blur here */
+    border-radius: 8px; /* Slightly smaller radius for the search bar */
+    padding: 8px 12px; /* Padding inside the bar */
+    height: 50px; /* Explicit height to make it thinner */
 }
 
-.header-outline::before {
-    content: '';
+/* Search icon inside the bar */
+.search-icon {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 30px;
-    padding: 1.5px;
-    background: linear-gradient(180deg,
-        rgba(255, 255, 255, 0.4) 0%,
-        rgba(255, 255, 255, 0) 37%,
-        rgba(255, 255, 255, 0) 57%,
-        rgba(255, 255, 255, 0.1) 100%);
-    -webkit-mask: 
-        linear-gradient(white, white) content-box, 
-        linear-gradient(white, white);
-    -webkit-mask-composite: xor;
-            mask-composite: exclude;
-    pointer-events: none;
-    opacity: 1;
-    transition: opacity 0.2s ease-in-out;
+    left: 12px;
+    font-size: 18px; /* Slightly smaller size for the icon */
+    color: #ccc; /* Light gray color for the icon */
+    pointer-events: none; /* Prevent interaction with the icon */
 }
 
-input {
-    color: white;
-    font-size: 1rem;
-    padding: 0.5rem;
+/* Input field */
+.search-input {
+    flex: 1;
+    padding: 8px 10px 8px 10px; /* Reduced padding for thinner input field */
+    font-size: 14px; /* Slightly smaller font size */
     border: none;
     outline: none;
     background: transparent;
+    color: #fff; /* White text for input */
+}
+
+.search-input::placeholder {
+    color: #bbb; /* Light gray placeholder text */
+    opacity: 0.8;
 }
