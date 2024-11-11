@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        cursive: ['"Great Vibes"', 'cursive'],
+        // cursive: ['"Oranienbaum"', 'cursive'],
+        elegant: ['"Dancing Script"',],
       },
       boxShadow: {
         'glow': '0 0 15px 5px rgba(255, 255, 255, 0.5)',
